@@ -1,5 +1,6 @@
 package com.example.putnam.spbdemos.svcs;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,6 +12,7 @@ public class MockBookFinderImpl implements BookFinderService {
 
     public MockBookFinderImpl() {
         super();
+        this.books = new ArrayList<>();
     }
 
     public MockBookFinderImpl(List<Book> cache) {
@@ -30,8 +32,7 @@ public class MockBookFinderImpl implements BookFinderService {
 
     @Override
     public List<Book> getCurrentBooks() {
-        // TODO Auto-generated method stub
-        return null;
+        return this.books;
     }
     
 }
