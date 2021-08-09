@@ -7,5 +7,6 @@ import com.example.putnam.spbdemos.domain.Book;
 
 public interface BookFinderService {
     Optional<Book> findByTitle(String searchTitle);
+    List<Book> findByAuthorLastName(String lastName);
     List<Book> getCurrentBooks();
 }

@@ -9,6 +9,7 @@ public class Book {
     private Author author;
     private int category;
 
+
     public Book() {
         super();
         this.id = Instant.now().getNano();
@@ -43,7 +44,8 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
-   @Override
+
+    @Override
    public boolean equals(Object obj) {
        if(this==obj) return true;
        if(!(obj instanceof Book)) return false;

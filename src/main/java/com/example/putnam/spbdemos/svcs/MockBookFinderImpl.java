@@ -26,13 +26,17 @@ public class MockBookFinderImpl implements BookFinderService {
 
     @Override
     public Optional<Book> findByTitle(String searchTitle) {
-        // TODO Auto-generated method stub
-        return null;
+        return this.books.stream().filter(t -> t.getTitle().contains(searchTitle)).findFirst();
     }
 
     @Override
     public List<Book> getCurrentBooks() {
         return this.books;
+    }
+
+    @Override
+    public List<Book> findByAuthorLastName(String lastName) {
+        return this.books.stream().filter(a -> a.getAuthor().getLastName().equalsIgnoreCase(lastName)).toList();
     }
     
 }
