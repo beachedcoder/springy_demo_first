@@ -1,10 +1,10 @@
 package com.example.putnam.spbdemos;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.example.putnam.spbdemos.domain.Author;
 import com.example.putnam.spbdemos.domain.Book;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataGenerator {
 
@@ -29,8 +29,6 @@ public class DataGenerator {
         rtnList.add(new Book("Java Enterprise Patterns",jose,75));
         rtnList.add(new Book("Microservice Patterns with examples", jose,75));
         rtnList.add(new Book("Concurrency in Practice, Java",jose,75));
-
-
 
         return rtnList;
     }

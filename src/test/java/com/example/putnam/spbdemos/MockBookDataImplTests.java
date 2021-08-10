@@ -1,23 +1,19 @@
 package com.example.putnam.spbdemos;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.List;
-import java.util.Optional;
-
-import javax.annotation.Resource;
-
 import com.example.putnam.spbdemos.domain.Author;
 import com.example.putnam.spbdemos.domain.Book;
 import com.example.putnam.spbdemos.svcs.MockBookFinderImpl;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+
+import javax.annotation.Resource;
+import java.util.List;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class MockBookDataImplTests {
     
@@ -28,6 +24,7 @@ public class MockBookDataImplTests {
     @BeforeEach
     public void initTestData() {
         this.bean = (MockBookFinderImpl)ctx.getBean(MockBookFinderImpl.class);
+        this.bean.addBooks(DataGenerator.getSampleBooks());
     }
 
     @AfterEach
@@ -37,6 +34,7 @@ public class MockBookDataImplTests {
 
     @Test
     public void verifyManagedMockBookImplPresent() {
+        // acceptable demo test but useless in practice
         assertNotNull(
             ctx.getBean(MockBookFinderImpl.class),
             "mock book finder failed configuration instantiation");
@@ -44,7 +42,6 @@ public class MockBookDataImplTests {
 
     @Test
     public void verifyMockBookImpleAcceptsBulkUpdate() {
-        this.bean.addBooks(DataGenerator.getSampleBooks());
         assertEquals(
             DataGenerator.getSampleBooks().size(),
             this.bean.getCurrentBooks().size(),
@@ -64,6 +61,7 @@ public class MockBookDataImplTests {
 
     @Test
     public void findAllBooksByAuthorLastName() {
+        String lName = "Java"; // based on DataGenerator class
         
     }
 }
