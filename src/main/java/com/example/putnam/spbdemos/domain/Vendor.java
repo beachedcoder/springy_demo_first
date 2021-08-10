@@ -13,6 +13,7 @@ public class Vendor {
     private long id;
     private String name;
     private UUID accountCode;
+    
     public Vendor() {
         super();
         this.accountCode = UUID.randomUUID();
