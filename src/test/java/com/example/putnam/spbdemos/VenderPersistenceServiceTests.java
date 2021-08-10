@@ -36,9 +36,6 @@ public class VenderPersistenceServiceTests {
         }
     }
 
-    
-
-
 
     static List<Vendor> getVendorsForTest(){
         return Arrays.asList(

@@ -1,11 +1,13 @@
 package com.example.putnam.spbdemos.domain;
 
+import java.util.Objects;
 import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
 public class Vendor {
     @Id
@@ -18,6 +20,7 @@ public class Vendor {
         super();
         this.accountCode = UUID.randomUUID();
     }
+
     public Vendor(String vName, UUID acctCode) {
         this();
         this.name = vName; this.accountCode = acctCode;
@@ -40,6 +43,7 @@ public class Vendor {
     public void setName(String name) {
         this.name = name;
     }
+
     @Override
     public boolean equals(Object obj) {
         if(this==obj) return true;
@@ -48,5 +52,10 @@ public class Vendor {
         return getId()==v.getId() &&
         getAccountCode().equals(v.getAccountCode()) &&
         getName().equalsIgnoreCase(v.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(),getAccountCode(),getName());
     }
 }
