@@ -18,7 +18,7 @@ public class DataGenerator {
         rtnList.add(new Book("Welcome to the Jungle", mark, 42));
         rtnList.add(new Book("Total fly fishing guide", mark, 42));
         rtnList.add(new Book("History of fly fishing", mark, 42));
-        rtnList.add(new Book("Orvise fly fishing guide", mark, 42));
+        rtnList.add(new Book("Orvis fly fishing guide", mark, 42));
         rtnList.add(new Book("Lords of fly fishing", mark, 42));
         rtnList.add(new Book("A river runs through it", mark, 42));
 

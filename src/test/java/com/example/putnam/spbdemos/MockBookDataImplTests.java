@@ -50,10 +50,8 @@ public class MockBookDataImplTests {
 
     @Test
     public void verifySearchByTitleReturnsCorrectBook() {
-        List<Book> bookCache = DataGenerator.getSampleBooks();
         String searchTitle = "Jupiter testing rocks convenience";
-        bookCache.add(new Book(searchTitle,new Author("bobo","Da Clown"),21));
-        this.bean.addBooks(bookCache);
+        this.bean.addBook(new Book(searchTitle,new Author("bobo","Da Clown"),21));
         Optional<Book> foundBook = this.bean.findByTitle(searchTitle);
         assertTrue(foundBook.isPresent(),"book added not found upon search");
         assertEquals(searchTitle, foundBook.get().getTitle(),"title didn't match inserted object");
