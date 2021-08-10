@@ -62,6 +62,6 @@ public class MockBookDataImplTests {
     @Test
     public void findAllBooksByAuthorLastName() {
         String lName = "Java"; // based on DataGenerator class
-        
+
     }
 }
