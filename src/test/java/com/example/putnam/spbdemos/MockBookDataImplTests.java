@@ -6,6 +6,8 @@ import com.example.putnam.spbdemos.svcs.MockBookFinderImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
@@ -16,6 +18,8 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class MockBookDataImplTests {
+
+    Logger logit = LoggerFactory.getLogger(MockBookDataImplTests.class);
     
     @Resource
     ApplicationContext ctx;
