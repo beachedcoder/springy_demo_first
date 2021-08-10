@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ConfigurationSvcs {
     
-    @Bean
+    @Bean(name = "cacheBookFinder")
     public MockBookFinderImpl buildMockBookCacheService() {
         return new MockBookFinderImpl();
     }
