@@ -3,11 +3,16 @@ package com.example.putnam.spbdemos.domain;
 import java.time.Instant;
 import java.util.Objects;
 
-import org.springframework.lang.NonNull;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+
+@Entity
 public class Author {
+    @Id
+    @GeneratedValue
     private long id;
-    @NonNull
     private String firstName;
     private String lastName;
     public Author() {
