@@ -1,14 +1,13 @@
 package com.example.putnam.spbdemos.svcs;
 
+import com.example.putnam.spbdemos.dao.VendorRepository;
+import com.example.putnam.spbdemos.domain.Vendor;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-
-import com.example.putnam.spbdemos.dao.VendorRepository;
-import com.example.putnam.spbdemos.domain.Vendor;
-
-import org.springframework.stereotype.Service;
 
 @Service
 public class VendorPersistenceService {
@@ -25,8 +24,8 @@ public class VendorPersistenceService {
         return StreamSupport.stream(this.dao.findAll().spliterator(),false).collect(Collectors.toList());
     }
 
-    public void addNueVendor(Vendor nueVendor) {
-        this.dao.save(nueVendor);
+    public Vendor addNueVendor(Vendor nueVendor) {
+       return this.dao.save(nueVendor);
     }
 
     public Optional<Vendor> updateCurrentVendor(Vendor v) {
